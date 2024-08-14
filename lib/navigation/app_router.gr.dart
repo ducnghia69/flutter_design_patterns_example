@@ -39,6 +39,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const CreationalHomeTabPage(),
       );
     },
+    FadeTransitionStrategyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FadeTransitionStrategyPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -53,6 +59,18 @@ abstract class _$AppRouter extends RootStackRouter {
           key: args.key,
           category: args.category,
         ),
+      );
+    },
+    SlideTransitionStrategyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SlideTransitionStrategyPage(),
+      );
+    },
+    StrategyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const StrategyPage(),
       );
     },
     StructuralHomeTab.name: (routeData) {
@@ -127,6 +145,20 @@ class CreationalHomeTab extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [FadeTransitionStrategyPage]
+class FadeTransitionStrategyRoute extends PageRouteInfo<void> {
+  const FadeTransitionStrategyRoute({List<PageRouteInfo>? children})
+      : super(
+          FadeTransitionStrategyRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FadeTransitionStrategyRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
@@ -176,6 +208,34 @@ class HomeTabRouteArgs {
   String toString() {
     return 'HomeTabRouteArgs{key: $key, category: $category}';
   }
+}
+
+/// generated route for
+/// [SlideTransitionStrategyPage]
+class SlideTransitionStrategyRoute extends PageRouteInfo<void> {
+  const SlideTransitionStrategyRoute({List<PageRouteInfo>? children})
+      : super(
+          SlideTransitionStrategyRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SlideTransitionStrategyRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [StrategyPage]
+class StrategyRoute extends PageRouteInfo<void> {
+  const StrategyRoute({List<PageRouteInfo>? children})
+      : super(
+          StrategyRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'StrategyRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

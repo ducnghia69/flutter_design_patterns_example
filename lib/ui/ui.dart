@@ -6,3 +6,6 @@ export 'components/primary_app_bar.dart';
 export 'page/design_patterns/template_method/base/base_state_body.dart';
 export 'page/design_patterns/template_method/template_method_page.dart';
 export 'page/design_patterns/composite/composite_page.dart';
+export 'page/design_patterns/strategy/strategy_page.dart';
+export 'page/design_patterns/strategy/fade_transition_strategy_page.dart';
+export 'page/design_patterns/strategy/slide_transition_strategy_page.dart';

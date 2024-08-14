@@ -12,38 +12,57 @@ part 'app_router.gr.dart';
 @LazySingleton()
 class AppRouter extends _$AppRouter {
   @override
-  List<AutoRoute> get routes => [
-        AutoRoute(
-          page: HomeRoute.page,
-          initial: true,
-          children: [
-            AutoRoute(
-              page: CreationalHomeTab.page,
-              maintainState: true,
-              children: [
-                AutoRoute(page: HomeTabRoute.page, initial: true),
-              ],
-            ),
-            AutoRoute(
-              page: StructuralHomeTab.page,
-              maintainState: true,
-              children: [
-                AutoRoute(page: HomeTabRoute.page, initial: true),
-                AutoRoute(page: AdapterRoute.page),
-                AutoRoute(page: CompositeRoute.page),
-              ],
-            ),
-            AutoRoute(
-              page: BehavioralHomeTab.page,
-              maintainState: true,
-              children: [
-                AutoRoute(page: HomeTabRoute.page, initial: true),
-                AutoRoute(page: TemplateMethodRoute.page),
-              ],
-            ),
-          ],
-        ),
-      ];
+  List<AutoRoute> get routes {
+    final fadeTransition = RouteTypeContext(transitionStrategy: FadeTransitionStrategy());
+    final slideTransition = RouteTypeContext(transitionStrategy: SlideTransitionStrategy());
+
+    return [
+      AutoRoute(
+        page: HomeRoute.page,
+        initial: true,
+        children: [
+          AutoRoute(
+            page: CreationalHomeTab.page,
+            maintainState: true,
+            children: [
+              AutoRoute(page: HomeTabRoute.page, initial: true),
+            ],
+          ),
+          AutoRoute(
+            page: StructuralHomeTab.page,
+            maintainState: true,
+            children: [
+              AutoRoute(page: HomeTabRoute.page, initial: true),
+              AutoRoute(page: AdapterRoute.page),
+              AutoRoute(page: CompositeRoute.page),
+            ],
+          ),
+          AutoRoute(
+            page: BehavioralHomeTab.page,
+            maintainState: true,
+            children: [
+              AutoRoute(page: HomeTabRoute.page, initial: true),
+              AutoRoute(page: TemplateMethodRoute.page),
+              AutoRoute(
+                page: StrategyRoute.page,
+                children: [
+                  AutoRoute(
+                    type: fadeTransition.routeType(),
+                    page: FadeTransitionStrategyRoute.page,
+                    initial: true,
+                  ),
+                  AutoRoute(
+                    type: slideTransition.routeType(),
+                    page: SlideTransitionStrategyRoute.page,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    ];
+  }
 }
 
 @RoutePage(name: 'CreationalHomeTab')
