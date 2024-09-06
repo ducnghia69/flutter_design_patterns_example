@@ -67,6 +67,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SlideTransitionStrategyPage(),
       );
     },
+    StateRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const StatePage(),
+      );
+    },
     StrategyRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -220,6 +226,20 @@ class SlideTransitionStrategyRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SlideTransitionStrategyRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [StatePage]
+class StateRoute extends PageRouteInfo<void> {
+  const StateRoute({List<PageRouteInfo>? children})
+      : super(
+          StateRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'StateRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

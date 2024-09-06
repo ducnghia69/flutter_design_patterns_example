@@ -9,3 +9,4 @@ export 'page/design_patterns/composite/composite_page.dart';
 export 'page/design_patterns/strategy/strategy_page.dart';
 export 'page/design_patterns/strategy/fade_transition_strategy_page.dart';
 export 'page/design_patterns/strategy/slide_transition_strategy_page.dart';
+export 'page/design_patterns/state/state_page.dart';

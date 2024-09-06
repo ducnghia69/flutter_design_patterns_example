@@ -116,6 +116,7 @@ class AppDataSource {
         title: 'State',
         description:
             'Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.',
+        route: StateRoute(),
       ),
       DesignPattern(
         title: 'Mediator',
